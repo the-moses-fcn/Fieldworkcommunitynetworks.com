@@ -583,7 +583,7 @@ section {
 
 .partner-card p {
   font-size: 0.88rem;
-  color: var(--fog);
+  color: #3A3028;
   line-height: 1.6;
 }
 
@@ -1131,7 +1131,7 @@ footer {
 
 .mfr-volume {
   font-size: 0.78rem;
-  color: var(--fog);
+  color: #3A3028;
   padding-top: 0.75rem;
   border-top: 1px solid var(--linen);
   margin-top: 0.25rem;
@@ -1183,7 +1183,7 @@ footer {
 
 .priority-note {
   font-size: 0.88rem;
-  color: var(--fog);
+  color: #3A3028;
   line-height: 1.5;
   margin-bottom: 0;
 }
@@ -1398,7 +1398,7 @@ footer {
 
 .node-sub {
   font-size: 0.8rem;
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(245, 240, 232, 0.82);
   line-height: 1.55;
   margin: 0;
 }
@@ -1435,7 +1435,7 @@ footer {
 
 .stream-desc {
   font-size: 0.77rem;
-  color: rgba(245, 240, 232, 0.6);
+  color: rgba(245, 240, 232, 0.82);
   line-height: 1.5;
   margin: 0;
 }
@@ -1516,7 +1516,7 @@ footer {
 }
 
 .sponsor-block-dark  .sponsor-block-eyebrow { color: var(--sage); }
-.sponsor-block-light .sponsor-block-eyebrow { color: var(--shadow); opacity: 0.55; }
+.sponsor-block-light .sponsor-block-eyebrow { color: var(--moss); }
 
 .sponsor-block-title {
   font-family: 'Playfair Display', serif;
@@ -1536,7 +1536,7 @@ footer {
 }
 
 .sponsor-block-dark  .sponsor-block-body { color: rgba(245, 240, 232, 0.75); }
-.sponsor-block-light .sponsor-block-body { color: var(--shadow); }
+.sponsor-block-light .sponsor-block-body { color: #3A3028; }
 
 .sponsor-list {
   padding: 0;
@@ -1565,7 +1565,7 @@ footer {
 
 .sponsor-block-dark  .sponsor-list li         { color: rgba(245, 240, 232, 0.72); }
 .sponsor-block-dark  .sponsor-list li::before  { color: var(--amber); }
-.sponsor-block-light .sponsor-list li         { color: var(--shadow); }
+.sponsor-block-light .sponsor-list li         { color: #3A3028; }
 .sponsor-block-light .sponsor-list li::before  { color: var(--amber); }
 
 .sponsor-block-note {
