@@ -1483,3 +1483,81 @@ footer {
   .stream-grid { grid-template-columns: 1fr; }
   .node-grid { grid-template-columns: 1fr; }
 }
+
+/* ─── Vision: replication proof two-column ─── */
+
+.replication-proof {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin: 3rem 0 2rem;
+}
+
+.proof-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--bark);
+  margin: 0 0 1rem;
+}
+
+.proof-col p {
+  font-size: 0.95rem;
+  color: var(--shadow);
+  line-height: 1.75;
+  margin: 0 0 0.9rem;
+}
+
+@media (max-width: 700px) {
+  .replication-proof { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* ─── Contact: audience-specific pathways ─── */
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5px;
+  background: var(--fog);
+  border: 1.5px solid var(--fog);
+  margin: 2rem 0 3rem;
+}
+
+.audience-card {
+  background: var(--cream);
+  padding: 2rem 1.75rem;
+  transition: background 0.2s ease;
+}
+
+.audience-card:hover {
+  background: white;
+}
+
+.audience-type {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--amber);
+  opacity: 0.3;
+  margin: 0 0 0.75rem;
+  line-height: 1;
+}
+
+.audience-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bark);
+  margin: 0 0 0.65rem;
+}
+
+.audience-card p {
+  font-size: 0.875rem;
+  color: var(--shadow);
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .audience-grid { grid-template-columns: 1fr; }
+}
