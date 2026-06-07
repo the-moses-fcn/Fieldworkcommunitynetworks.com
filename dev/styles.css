@@ -1275,7 +1275,7 @@ footer {
 
 .revenue-body p {
   font-size: 0.875rem;
-  color: var(--shadow);
+  color: #3A3028;
   line-height: 1.55;
   margin: 0;
 }
@@ -1291,13 +1291,13 @@ footer {
 .revenue-price span {
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--shadow);
+  color: var(--fog);
   font-family: 'Source Serif 4', serif;
 }
 
 .revenue-compare {
   font-size: 0.75rem;
-  color: var(--shadow);
+  color: var(--fog);
   opacity: 0.65;
   font-style: italic;
   line-height: 1.4;
@@ -1639,13 +1639,13 @@ footer {
   font-family: 'Playfair Display', serif;
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--bark);
+  color: var(--gold);
   margin: 0 0 1rem;
 }
 
 .proof-col p {
   font-size: 0.95rem;
-  color: var(--shadow);
+  color: rgba(245, 240, 232, 0.82);
   line-height: 1.75;
   margin: 0 0 0.9rem;
 }
@@ -1695,7 +1695,7 @@ footer {
 
 .audience-card p {
   font-size: 0.875rem;
-  color: var(--shadow);
+  color: #3A3028;
   line-height: 1.65;
   margin: 0;
 }
