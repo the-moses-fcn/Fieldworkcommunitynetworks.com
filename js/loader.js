@@ -8,6 +8,7 @@
     ['partners-mount',       'components/partners.html'],
     ['status-mount',         'components/status.html'],
     ['supply-chain-mount',   'components/supply-chain.html'],
+    ['services-mount',       'components/services.html'],
     ['vision-mount',         'components/vision.html'],
     ['contact-mount',        'components/contact.html'],
     ['footer-mount',         'components/footer.html'],
