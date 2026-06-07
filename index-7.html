@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fieldwork Community Networks — Southern Humboldt County</title>
+<meta name="description" content="Community-owned broadband, emergency communications, and resilient infrastructure for Southern Humboldt County. Built by the community, powered by the sun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest:  #1A3D2B;
+  --moss:    #2E6B47;
+  --sage:    #5C8C6A;
+  --amber:   #C4622D;
+  --gold:    #D4882A;
+  --cream:   #F5F0E8;
+  --linen:   #EAE4D6;
+  --bark:    #1C1410;
+  --fog:     #7A9488;
+  --shadow:  rgba(26,61,43,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--cream);
+  color: var(--bark);
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 300;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ── TOPOGRAPHIC BACKGROUND TEXTURE ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -15deg,
+      transparent,
+      transparent 44px,
+      rgba(94,140,106,0.05) 44px,
+      rgba(94,140,106,0.05) 46px
+    ),
+    repeating-linear-gradient(
+      75deg,
+      transparent,
+      transparent 68px,
+      rgba(196,98,45,0.03) 68px,
+      rgba(196,98,45,0.03) 70px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HERO ── */
+.hero {
+  padding-top: 7rem;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 6rem;
+  text-align: center;
+  background: linear-gradient(165deg, #0D2318 0%, #152E1F 40%, #1A1208 100%);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 100% 60% at 50% -10%, rgba(196,98,45,0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 90% 90%, rgba(46,107,71,0.2) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 60%, rgba(212,136,42,0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 52px,
+      rgba(255,255,255,0.025) 52px,
+      rgba(255,255,255,0.025) 54px
+    );
+  pointer-events: none;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.logo-wrap {
+  margin-bottom: 3rem;
+  animation: fadeUp 1.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.logo-wrap img {
+  width: min(420px, 88vw);
+  filter: drop-shadow(0 12px 48px rgba(0,0,0,0.6));
+}
+
+.hero-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  animation: fadeUp 1.2s 0.15s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: var(--cream);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 2rem;
+  animation: fadeUp 1.2s 0.25s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--gold));
+  margin: 0 auto 2rem;
+  animation: fadeUp 1.2s 0.35s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: rgba(245,240,232,0.72);
+  max-width: 640px;
+  margin: 0 auto 3rem;
+  line-height: 1.75;
+  animation: fadeUp 1.2s 0.45s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  border: 1px solid rgba(196,98,45,0.6);
+  color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  font-style: italic;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+  animation: fadeUp 1.2s 0.55s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.hero-cta:hover {
+  background: rgba(196,98,45,0.15);
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.hero-cta::after {
+  content: "↓";
+  font-style: normal;
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 1;
+  animation: fadeUp 1.2s 1.2s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+.scroll-indicator span {
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.3);
+}
+
+.scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(196,98,45,0.6), transparent);
+  animation: scrollPulse 2.5s ease-in-out infinite;
+}
+
+/* ── TERRAIN DIVIDER ── */
+.terrain-divider {
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--sage) 15%,
+    var(--amber) 35%,
+    var(--gold) 50%,
+    var(--amber) 65%,
+    var(--sage) 85%,
+    transparent 100%
+  );
+  opacity: 0.35;
+}
+
+/* ── SECTIONS ── */
+section {
+  position: relative;
+  z-index: 1;
+  padding: 7rem 2rem;
+}
+
+.section-inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(196,98,45,0.3);
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.18;
+  margin-bottom: 2.5rem;
+  max-width: 700px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--amber);
+}
+
+.body-text {
+  font-size: 1.08rem;
+  color: #3A3028;
+  margin-bottom: 1.75rem;
+  max-width: 700px;
+  line-height: 1.85;
+}
+
+.body-text strong {
+  color: var(--forest);
+  font-weight: 600;
+}
+
+/* ── PULL QUOTE ── */
+.pull-quote {
+  position: relative;
+  padding: 2.5rem 2.5rem 2.5rem 3.5rem;
+  margin: 3.5rem 0;
+  background: var(--linen);
+  border-left: 4px solid var(--amber);
+}
+
+.pull-quote::before {
+  content: '\201C';
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  color: var(--amber);
+  opacity: 0.25;
+  line-height: 1;
+}
+
+.pull-quote p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-style: italic;
+  color: var(--forest);
+  line-height: 1.6;
+}
+
+.pull-quote cite {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-style: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--fog);
+}
+
+/* ── PROBLEM SECTION ── */
+.problem-section { background: var(--cream); }
+
+.corridor-graphic {
+  margin: 3rem 0;
+  padding: 2.5rem;
+  background: var(--linen);
+  border: 1px solid rgba(94,140,106,0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.corridor-graphic::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--forest), var(--amber), var(--forest));
+}
+
+.corridor-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fog);
+  margin-bottom: 0.75rem;
+}
+
+.corridor-path {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.corridor-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.corridor-node-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--forest);
+  border: 2px solid var(--sage);
+}
+
+.corridor-node-dot.active {
+  background: var(--amber);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(196,98,45,0.2);
+}
+
+.corridor-node span {
+  font-size: 0.7rem;
+  color: var(--forest);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.corridor-line {
+  flex: 1;
+  min-width: 20px;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, var(--sage) 0, var(--sage) 4px, transparent 4px, transparent 8px);
+  opacity: 0.6;
+}
+
+.corridor-line.fiber {
+  background: linear-gradient(90deg, var(--amber), var(--gold));
+  opacity: 0.8;
+  height: 3px;
+}
+
+/* ── DARK SECTION ── */
+.dark-section {
+  background: var(--forest);
+  color: var(--cream);
+}
+
+.dark-section .section-title { color: var(--cream); }
+.dark-section .body-text { color: rgba(245,240,232,0.8); }
+.dark-section .body-text strong { color: var(--gold); }
+.dark-section .section-label { color: var(--gold); border-bottom-color: rgba(212,136,42,0.3); }
+
+/* ── STATS ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0;
+  margin: 3.5rem 0;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.stat-box {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+
+.stat-box:last-child { border-right: none; }
+
+.stat-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 32px; height: 3px;
+  background: var(--amber);
+}
+
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+
+.stat-unit {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--amber);
+}
+
+.stat-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+  margin-top: 0.6rem;
+  display: block;
+  line-height: 1.4;
+}
+
+/* ── PILLARS ── */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5px;
+  margin-top: 3.5rem;
+  background: rgba(255,255,255,0.08);
+}
+
+.pillar {
+  padding: 2.5rem 2rem;
+  background: rgba(255,255,255,0.03);
+  transition: background 0.3s;
+  position: relative;
+}
+
+.pillar::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--amber);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.pillar:hover::before { transform: scaleX(1); }
+.pillar:hover { background: rgba(255,255,255,0.06); }
+
+.pillar-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  display: block;
+}
+
+.pillar-num {
+  position: absolute;
+  top: 1.5rem; right: 1.75rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.05);
+  line-height: 1;
+}
+
+.pillar h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.pillar p {
+  font-size: 0.92rem;
+  color: rgba(245,240,232,0.65);
+  line-height: 1.7;
+}
+
+/* ── WHY NOW SECTION ── */
+.why-section { background: var(--linen); }
+.why-section .section-title { color: var(--forest); }
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 640px) { .why-grid { grid-template-columns: 1fr; } }
+
+.why-col h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--forest);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(26,61,43,0.15);
+}
+
+.why-col p {
+  font-size: 0.97rem;
+  color: #3A3028;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* ── PARTNERS SECTION ── */
+.partners-section { background: var(--cream); }
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.partner-card {
+  padding: 2rem;
+  background: var(--linen);
+  border: 1px solid rgba(94,140,106,0.15);
+  border-bottom: 3px solid var(--sage);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.partner-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+.partner-type {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.6rem;
+}
+
+.partner-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: var(--forest);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.partner-card p {
+  font-size: 0.88rem;
+  color: var(--fog);
+  line-height: 1.6;
+}
+
+/* ── VISION SECTION ── */
+.vision-section {
+  background: var(--bark);
+  color: var(--cream);
+}
+
+.vision-section .section-title { color: var(--cream); }
+.vision-section .section-label { color: var(--gold); border-bottom-color: rgba(212,136,42,0.3); }
+.vision-section .body-text { color: rgba(245,240,232,0.78); }
+.vision-section .body-text strong { color: var(--gold); }
+
+.corridor-map {
+  margin: 3.5rem 0;
+  padding: 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.corridor-map-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.35);
+  margin-bottom: 1.75rem;
+}
+
+.corridor-stops {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.stop {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.stop:last-child { border-bottom: none; }
+
+.stop-marker {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--fog);
+  border: 2px solid var(--fog);
+  flex-shrink: 0;
+}
+
+.stop-marker.active {
+  background: var(--amber);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 4px rgba(196,98,45,0.25);
+}
+
+.stop-marker.future {
+  background: transparent;
+  border-color: rgba(255,255,255,0.2);
+  border-style: dashed;
+}
+
+.stop-text {
+  flex: 1;
+}
+
+.stop-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--cream);
+}
+
+.stop-name.future { color: rgba(245,240,232,0.4); font-style: italic; }
+
+.stop-desc {
+  font-size: 0.8rem;
+  color: rgba(245,240,232,0.4);
+  margin-top: 0.15rem;
+}
+
+.stop-status {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.stop-status.phase1 { color: var(--gold); border-color: rgba(212,136,42,0.4); }
+.stop-status.phase2 { color: rgba(245,240,232,0.3); border-color: rgba(255,255,255,0.1); }
+
+/* ── CONTACT ── */
+.contact-section {
+  background: var(--forest);
+  text-align: center;
+}
+
+.contact-section .section-title { color: var(--cream); max-width: none; }
+.contact-section .section-label { color: var(--gold); border-bottom-color: rgba(212,136,42,0.3); }
+.contact-section .body-text { color: rgba(245,240,232,0.7); margin: 0 auto 3rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5px;
+  background: rgba(255,255,255,0.08);
+  margin: 3.5rem 0;
+  text-align: left;
+}
+
+.contact-card {
+  padding: 2.5rem 2rem;
+  background: rgba(255,255,255,0.03);
+}
+
+.contact-card-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 0.75rem;
+}
+
+.contact-card a, .contact-card p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--cream);
+  text-decoration: none;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.contact-card a:hover { color: var(--gold); }
+
+.contact-main-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 3rem;
+  background: var(--amber);
+  color: var(--cream);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.contact-main-link:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(196,98,45,0.3);
+}
+
+/* ── FOOTER ── */
+footer {
+  position: relative;
+  z-index: 1;
+  background: #080E0A;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 180px;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+  filter: grayscale(0.3);
+}
+
+.footer-text {
+  font-size: 0.78rem;
+  color: rgba(245,240,232,0.25);
+  letter-spacing: 0.1em;
+  line-height: 2;
+}
+
+.footer-text a {
+  color: rgba(245,240,232,0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-text a:hover { color: var(--gold); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50%       { opacity: 0.8; transform: scaleY(1.05); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+@media (max-width: 640px) {
+  section { padding: 5rem 1.25rem; }
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .stat-box { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .pillars { gap: 1px; }
+  .corridor-path { display: none; }
+}
+
+  /* ── NAV ── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13,35,24,0);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease;
+  }
+
+  .nav.scrolled {
+    background: rgba(13,35,24,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-logo {
+    height: 36px;
+    opacity: 0.9;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+    transition: opacity 0.2s;
+  }
+
+  .nav-logo:hover { opacity: 1; }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+    padding-bottom: 2px;
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .nav-links a:hover {
+    color: var(--gold);
+    border-bottom-color: rgba(212,136,42,0.5);
+  }
+
+  /* ── HAMBURGER ── */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    position: relative;
+    z-index: 1001;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1),
+                opacity 0.25s ease,
+                width 0.3s ease;
+    transform-origin: center;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* ── MOBILE MENU ── */
+  .mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background: rgba(13,35,24,0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  .mobile-menu.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .mobile-menu a {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-style: italic;
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6rem 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: color 0.2s, opacity 0.4s ease, transform 0.4s ease;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    width: min(400px, 85vw);
+    text-align: center;
+  }
+
+  .mobile-menu.open a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.open a:nth-child(1) { transition-delay: 0.05s; }
+  .mobile-menu.open a:nth-child(2) { transition-delay: 0.1s; }
+  .mobile-menu.open a:nth-child(3) { transition-delay: 0.15s; }
+  .mobile-menu.open a:nth-child(4) { transition-delay: 0.2s; }
+  .mobile-menu.open a:nth-child(5) { transition-delay: 0.25s; }
+  .mobile-menu.open a:nth-child(6) { transition-delay: 0.3s; }
+
+  .mobile-menu a:hover { color: var(--gold); }
+
+  .mobile-menu-sub {
+    margin-top: 2.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(245,240,232,0.3);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    body.menu-open { overflow: hidden; }
+  }
+
+  @media (min-width: 769px) {
+    .mobile-menu { display: none; }
+  }
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <a href="#"><img src="fieldwork-logo.png" alt="Fieldwork Community Networks" class="nav-logo"></a>
+  <ul class="nav-links">
+    <li><a href="#problem">The Problem</a></li>
+    <li><a href="#infrastructure">Infrastructure</a></li>
+    <li><a href="#why">Why Now</a></li>
+    <li><a href="#partners">Partners</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#problem" class="mobile-link">The Problem</a>
+  <a href="#infrastructure" class="mobile-link">Infrastructure</a>
+  <a href="#why" class="mobile-link">Why Now</a>
+  <a href="#partners" class="mobile-link">Partners</a>
+  <a href="#vision" class="mobile-link">Vision</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <p class="mobile-menu-sub">Fieldwork Community Networks</p>
+</div>
+
+
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="logo-wrap">
+      <img src="fieldwork-logo.png" alt="Fieldwork Community Networks">
+    </div>
+    <p class="hero-eyebrow">Southern Humboldt County, California</p>
+    <h1>The infrastructure<br>this community<br><em>was always owed.</em></h1>
+    <div class="hero-divider"></div>
+    <p class="hero-sub">Community-owned broadband, emergency communications, and resilient off-grid power for the Salmon Creek watershed and the 101 corridor — built by the community, accountable to the community, powered by the sun.</p>
+    <a href="#problem" class="hero-cta">Our Story</a>
+  </div>
+  <div class="scroll-indicator"><span>Scroll</span></div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── THE PROBLEM ── -->
+<section class="problem-section" id="problem">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Why We Exist</p>
+      <h2 class="section-title">The fiber runs<br>right past us.<br><em>No one built the last mile.</em></h2>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <p class="body-text">The US 101 corridor through Southern Humboldt passes directly alongside one of the highest-capacity fiber backbones in the state. Most people — including most policymakers — don't know it's there. It has been there for decades.</p>
+      <p class="body-text">Commercial carriers have had full access to that backbone for years. They have not built last-mile service into Salmon Creek, Redway, Miranda, Phillipsville, or Garberville. They have not done so because the economics don't work for a profit-driven provider serving a dispersed rural population in rugged terrain. That calculus will never change for a commercial carrier.</p>
+      <p class="body-text"><strong>It changes for a community institution.</strong> Fieldwork Community Networks exists because community capital — not commercial capital — can solve this problem. We are building something a carrier structurally cannot build: locally owned, solar powered, accountable to the people it serves, and financially structured to sustain itself without extracting from its community.</p>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="corridor-graphic">
+        <p class="corridor-label">US 101 Corridor — Fiber Backbone vs. Last-Mile Reality</p>
+        <div class="corridor-path">
+          <div class="corridor-node">
+            <div class="corridor-node-dot active"></div>
+            <span>Garberville</span>
+          </div>
+          <div class="corridor-line fiber"></div>
+          <div class="corridor-node">
+            <div class="corridor-node-dot active"></div>
+            <span>Redway</span>
+          </div>
+          <div class="corridor-line"></div>
+          <div class="corridor-node">
+            <div class="corridor-node-dot active"></div>
+            <span>Miranda</span>
+          </div>
+          <div class="corridor-line"></div>
+          <div class="corridor-node">
+            <div class="corridor-node-dot active"></div>
+            <span>Phillipsville</span>
+          </div>
+          <div class="corridor-line"></div>
+          <div class="corridor-node">
+            <div class="corridor-node-dot active"></div>
+            <span>Salmon Creek</span>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--fog);margin-top:1.25rem;line-height:1.6;">
+          <span style="color:var(--amber);font-weight:600;">━━</span> High-capacity fiber backbone running parallel to US 101 &nbsp;·&nbsp;
+          <span style="color:var(--sage);">╌╌</span> Last-mile gap — unserved communities with no broadband access
+        </p>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="pull-quote">
+        <p>The sun that Humboldt is known for powers the infrastructure. The fiber that already runs up 101 carries the signal. What has been missing is the community institution to connect them.</p>
+        <cite>— Moses Burdon, Founder, Fieldwork Community Networks LLC</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── WHAT WE BUILD ── -->
+<section class="dark-section" id="infrastructure">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">The Infrastructure</p>
+      <h2 class="section-title">Four layers.<br>One sovereign network.<br><em>Built to last.</em></h2>
+      <p class="body-text">Every Fieldwork deployment runs four independent, non-overlapping systems. Each one serves the community on its own terms. Together they form something more resilient than any single technology can be — a network that keeps working when fire comes, when the grid goes down, and when it matters most.</p>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="stats-row">
+        <div class="stat-box">
+          <span class="stat-num">270<span class="stat-unit">+</span></span>
+          <span class="stat-label">Households<br>Served, Phase 1</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">100</span>
+          <span class="stat-label">Mbps Symmetric<br>to Each Anchor</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">100<span class="stat-unit">%</span></span>
+          <span class="stat-label">Solar Powered<br>Off-Grid</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-num">3<span class="stat-unit">M</span></span>
+          <span class="stat-label">USDA Community<br>Connect Grant</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="pillars">
+        <div class="pillar">
+          <span class="pillar-num">01</span>
+          <span class="pillar-icon">⟡</span>
+          <h3>Community Broadband</h3>
+          <p>Fiber-fed dedicated internet from the Garberville point of interconnect, carried by licensed microwave to ridge nodes at elevation, distributed by point-to-multipoint RF to every household and anchor institution in the watershed. 100 Mbps symmetric. No throttling. No data caps. No commercial carrier terms.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">02</span>
+          <span class="pillar-icon">◈</span>
+          <h3>Private LTE Cellular</h3>
+          <p>A CBRS Band 48 private cellular network built from scratch for this territory — not a repeater, not a booster, not a workaround. Real cellular service on standard phones in areas that commercial carriers have never served and will never serve. Fieldwork-issued SIM cards for fire departments, anchor institutions, and community members.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">03</span>
+          <span class="pillar-icon">△</span>
+          <h3>Emergency Communications</h3>
+          <p>A resilient LoRaWAN sensor and signaling mesh that operates fully independently of the primary network. Environmental monitoring, NOAA-grade weather stations, fire detection telemetry, and an emergency signaling floor that keeps working when primary systems are degraded. Built for the conditions that demand communications most.</p>
+        </div>
+        <div class="pillar">
+          <span class="pillar-num">04</span>
+          <span class="pillar-icon">☀</span>
+          <h3>Off-Grid Solar Power</h3>
+          <p>Every node — ridge relays, valley distribution points, anchor institution connections — runs entirely on solar with LiFePO4 battery backup providing days of autonomy. No PG&E dependency anywhere in the network. No grid failure risk during the fire conditions that demand communications most.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── WHY NOW ── -->
+<section class="why-section" id="why">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Why This. Why Now.</p>
+      <h2 class="section-title">The conditions for<br>this have never been<br><em>more right.</em></h2>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="why-grid">
+        <div class="why-col">
+          <h3>The Infrastructure Is Already There</h3>
+          <p>The fiber backbone running up 101 didn't require Fieldwork to build. The ridgelines at Pratt Mountain didn't require us to create. The sun over Southern Humboldt doesn't bill by the kilowatt-hour. The raw ingredients for this network have been sitting here, unused, for decades. What was missing was the community institution willing to connect them.</p>
+          <p>USDA's Community Connect program exists precisely for this moment — federal capital directed at community-owned broadband infrastructure in unserved rural areas. The grant application is submitted. The partners are committed. The entity is formed and registered.</p>
+        </div>
+        <div class="why-col">
+          <h3>Fire Season Changed Everything</h3>
+          <p>The 2020 and 2021 wildfire seasons demonstrated at enormous cost what happens when rural emergency communications fail. Delayed mutual aid coordination. Degraded situational awareness. Communication failures between responding agencies during active incidents. These aren't abstract infrastructure problems. They cost operational effectiveness when the cost is highest.</p>
+          <p>Redway Fire Protection District, Salmon Creek Volunteer Fire Department, and Garberville Fire Protection District are all partners in this network not because of technology — but because they have lived the consequences of not having it. This network is emergency infrastructure. The broadband is the baseline. The resilience is the point.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── PARTNERS ── -->
+<section class="partners-section" id="partners">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Community Partners</p>
+      <h2 class="section-title">Built alongside the<br>institutions that have<br><em>always protected this place.</em></h2>
+      <p class="body-text">Fieldwork Community Networks is not a company that arrived in Southern Humboldt with a product to sell. It is built alongside the fire departments, community media, and communications infrastructure that this watershed has relied on for generations.</p>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="partners-grid">
+        <div class="partner-card">
+          <p class="partner-type">Founding Anchor Institution</p>
+          <h4>Salmon Creek Volunteer Fire Department</h4>
+          <p>Primary deployment site and founding anchor institution. Dedicated 100 Mbps broadband, CBRS private LTE coverage across the response area, and founding membership in the Emergency AI Cooperative — at no cost to the department.</p>
+        </div>
+        <div class="partner-card">
+          <p class="partner-type">Anchor Institution Partner</p>
+          <h4>Redway Fire Protection District</h4>
+          <p>Anchor institution partner serving the Redway community. Dedicated broadband and private LTE for the response area, distribution node infrastructure at no cost to the district.</p>
+        </div>
+        <div class="partner-card">
+          <p class="partner-type">Gateway Node Partner</p>
+          <h4>Garberville Fire Protection District</h4>
+          <p>Host of the network's primary gateway node — the fiber interconnect point where the 101 backbone enters the community network. Solar canopy installation and carrier co-location revenue sharing.</p>
+        </div>
+        <div class="partner-card">
+          <p class="partner-type">Tower Co-Location Partner</p>
+          <h4>KMUD Redwood Community Radio</h4>
+          <p>35 years of community-owned communications infrastructure. Tower co-location partner providing the elevation and institutional credibility that no commercial site can replicate. We are building the next layer of the same story.</p>
+        </div>
+        <div class="partner-card">
+          <p class="partner-type">Primary Ridge Node</p>
+          <h4>Last Mile Digital / Pratt Mountain</h4>
+          <p>Tower co-location at 3,880 ft elevation — the irreplaceable ridge node providing line-of-sight microwave backhaul and point-to-multipoint distribution across the watershed.</p>
+        </div>
+        <div class="partner-card">
+          <p class="partner-type">Fraternal Partner</p>
+          <h4>Humboldt Lodge No. 79, F.&amp;A.M.</h4>
+          <p>The oldest fraternal organization in Humboldt County, supporting a brother doing meaningful work for the communities of Southern Humboldt.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── VISION ── -->
+<section class="vision-section" id="vision">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">The Replication Model</p>
+      <h2 class="section-title">Salmon Creek is<br>the proof of concept.<br><em>101 is the corridor.</em></h2>
+      <p class="body-text">Every rural community along the 101 corridor with sun exposure and proximity to that fiber backbone is a candidate for this model. The proof of concept in Salmon Creek becomes the template. The grant becomes the precedent. The LLC structure becomes the model.</p>
+      <p class="body-text">Fieldwork Community Networks is not building one network. We are building the <strong>first node in a replicable network</strong> of community-owned rural broadband and emergency communications infrastructure across the high fire hazard severity zones of Northern California — a string of community-owned, solar-powered micro-infrastructure sites from the Salmon Creek watershed north through Leggett, Laytonville, Willits, and beyond, each anchored by a fire department, each generating value for the community that hosts it.</p>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="corridor-map">
+        <p class="corridor-map-label">101 Corridor Node Deployment — Phase 1 and Beyond</p>
+        <div class="corridor-stops">
+          <div class="stop">
+            <div class="stop-marker active"></div>
+            <div class="stop-text">
+              <div class="stop-name">Garberville</div>
+              <div class="stop-desc">Gateway node — fiber interconnect, Garberville Fire Protection District</div>
+            </div>
+            <span class="stop-status phase1">Phase 1</span>
+          </div>
+          <div class="stop">
+            <div class="stop-marker active"></div>
+            <div class="stop-text">
+              <div class="stop-name">Salmon Creek Watershed</div>
+              <div class="stop-desc">Primary deployment — 270+ households, 3 anchor institutions, full network build</div>
+            </div>
+            <span class="stop-status phase1">Phase 1</span>
+          </div>
+          <div class="stop">
+            <div class="stop-marker active"></div>
+            <div class="stop-text">
+              <div class="stop-name">Redway</div>
+              <div class="stop-desc">Anchor institution extension — Redway Fire Protection District</div>
+            </div>
+            <span class="stop-status phase1">Phase 1–2</span>
+          </div>
+          <div class="stop">
+            <div class="stop-marker future"></div>
+            <div class="stop-text">
+              <div class="stop-name future">Phillipsville &amp; Miranda</div>
+              <div class="stop-desc">101 corridor extension — replication of Salmon Creek model</div>
+            </div>
+            <span class="stop-status phase2">Phase 2</span>
+          </div>
+          <div class="stop">
+            <div class="stop-marker future"></div>
+            <div class="stop-text">
+              <div class="stop-name future">Leggett</div>
+              <div class="stop-desc">Southern Humboldt gateway — high fire hazard zone, no cellular coverage</div>
+            </div>
+            <span class="stop-status phase2">Phase 2</span>
+          </div>
+          <div class="stop">
+            <div class="stop-marker future"></div>
+            <div class="stop-text">
+              <div class="stop-name future">Laytonville · Willits · Covelo</div>
+              <div class="stop-desc">Mendocino County corridor — same model, same infrastructure, new communities</div>
+            </div>
+            <span class="stop-status phase2">Phase 3+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2">
+      <div class="pull-quote" style="border-color:rgba(212,136,42,0.5);background:rgba(255,255,255,0.04);">
+        <p style="color:var(--cream);">Distributed revenue stays local. It employs local people. It doesn't extract — it deposits. This is not infrastructure that requires perpetual grant support to survive. It is a self-sustaining community asset that the grant brings into existence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="terrain-divider"></div>
+
+<!-- ── CONTACT ── -->
+<section class="contact-section" id="contact">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Get Involved</p>
+      <h2 class="section-title">This network belongs<br>to the community.<br><em>That means you.</em></h2>
+      <p class="body-text" style="max-width:580px;">Whether you are a community member who wants broadband, an anchor institution that wants to partner, a fire department that wants to understand what this means for your response area, or an organization that wants to support or replicate this model — we want to hear from you.</p>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p class="contact-card-label">General Inquiries</p>
+          <a href="mailto:themoses@fieldworkcommunitynetworks.com">themoses@<br>fieldworkcommunitynetworks.com</a>
+        </div>
+        <div class="contact-card">
+          <p class="contact-card-label">Service Area</p>
+          <p>Southern Humboldt County<br>California</p>
+        </div>
+        <div class="contact-card">
+          <p class="contact-card-label">Entity</p>
+          <p>Fieldwork Community<br>Networks LLC<br>No. B20260264727</p>
+        </div>
+      </div>
+      <div style="text-align:center;">
+        <a href="mailto:themoses@fieldworkcommunitynetworks.com" class="contact-main-link">Write to us →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img src="fieldwork-logo.png" alt="Fieldwork Community Networks" class="footer-logo">
+  <div class="footer-text">
+    <p>Fieldwork Community Networks LLC &nbsp;·&nbsp; California Entity No. B20260264727 &nbsp;·&nbsp; EIN 42-2984786</p>
+    <p>Southern Humboldt County, California</p>
+    <p style="margin-top:0.5rem;">
+      <a href="mailto:themoses@fieldworkcommunitynetworks.com">themoses@fieldworkcommunitynetworks.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://fieldworkcommunitynetworks.com">fieldworkcommunitynetworks.com</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── NAV SCROLL ──
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // ── HAMBURGER ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open', isOpen);
+    document.body.classList.toggle('menu-open', isOpen);
+  });
+
+  // Close on link click
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+
+  // Close on escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
+  });
+
+
+</script>
+</body>
+</html>
