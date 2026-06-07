@@ -10,6 +10,7 @@
     ['supply-chain-mount',   'components/supply-chain.html'],
     ['services-mount',       'components/services.html'],
     ['vision-mount',         'components/vision.html'],
+    ['sponsor-mount',        'components/sponsor.html'],
     ['contact-mount',        'components/contact.html'],
     ['footer-mount',         'components/footer.html'],
   ];

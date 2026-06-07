@@ -1484,6 +1484,148 @@ footer {
   .node-grid { grid-template-columns: 1fr; }
 }
 
+/* ─── Sponsor / Work With Us section ─── */
+
+.sponsor-section {
+  background: var(--linen);
+}
+
+.sponsor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5px;
+  background: var(--fog);
+  border: 1.5px solid var(--fog);
+  margin-top: 2.5rem;
+}
+
+.sponsor-block {
+  padding: 2.75rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sponsor-block-dark  { background: var(--forest); }
+.sponsor-block-light { background: var(--cream); }
+
+.sponsor-block-eyebrow {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.75rem;
+}
+
+.sponsor-block-dark  .sponsor-block-eyebrow { color: var(--sage); }
+.sponsor-block-light .sponsor-block-eyebrow { color: var(--shadow); opacity: 0.55; }
+
+.sponsor-block-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 1.25rem;
+}
+
+.sponsor-block-dark  .sponsor-block-title { color: var(--cream); }
+.sponsor-block-light .sponsor-block-title { color: var(--bark); }
+
+.sponsor-block-body {
+  font-size: 0.9rem;
+  line-height: 1.72;
+  margin: 0 0 1.5rem;
+}
+
+.sponsor-block-dark  .sponsor-block-body { color: rgba(245, 240, 232, 0.75); }
+.sponsor-block-light .sponsor-block-body { color: var(--shadow); }
+
+.sponsor-list {
+  padding: 0;
+  margin: 0 0 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex: 1;
+}
+
+.sponsor-list li {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.sponsor-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  font-size: 0.72rem;
+  top: 0.1em;
+}
+
+.sponsor-block-dark  .sponsor-list li         { color: rgba(245, 240, 232, 0.72); }
+.sponsor-block-dark  .sponsor-list li::before  { color: var(--amber); }
+.sponsor-block-light .sponsor-list li         { color: var(--shadow); }
+.sponsor-block-light .sponsor-list li::before  { color: var(--amber); }
+
+.sponsor-block-note {
+  font-size: 0.78rem;
+  color: rgba(245, 240, 232, 0.45);
+  line-height: 1.55;
+  margin: 0 0 2rem;
+  font-style: italic;
+}
+
+.sponsor-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+}
+
+.sponsor-tier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+}
+
+.tier-name {
+  font-size: 0.83rem;
+  color: var(--bark);
+}
+
+.tier-amount {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.97rem;
+  font-weight: 700;
+  color: var(--amber);
+}
+
+.sponsor-cta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  padding: 0.8rem 1.6rem;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+
+.sponsor-cta:hover      { opacity: 0.82; }
+.sponsor-cta-amber      { background: var(--amber); color: var(--forest); }
+.sponsor-cta-forest     { background: var(--forest); color: var(--cream); }
+
+@media (max-width: 760px) {
+  .sponsor-grid { grid-template-columns: 1fr; }
+  .sponsor-block { padding: 2rem 1.5rem; }
+}
+
 /* ─── Vision: replication proof two-column ─── */
 
 .replication-proof {
