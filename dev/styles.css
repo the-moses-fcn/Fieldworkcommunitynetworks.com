@@ -1202,3 +1202,150 @@ footer {
   .priority-amount { display: none; }
   .supply-banner { padding: 2rem 1.5rem; }
 }
+
+/* ─── Economics / Business Model section ─── */
+
+.economics-sep {
+  border: none;
+  border-top: 1.5px solid var(--fog);
+  margin: 4rem 0 3rem;
+}
+
+.economics-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  color: var(--bark);
+  line-height: 1.25;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.economics-title em {
+  color: var(--amber);
+  font-style: italic;
+}
+
+.revenue-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5px;
+  background: var(--fog);
+  border: 1.5px solid var(--fog);
+  margin: 2rem 0 2.5rem;
+}
+
+.revenue-card {
+  background: var(--cream);
+  padding: 2rem 1.75rem;
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  transition: background 0.2s ease;
+}
+
+.revenue-card:hover {
+  background: white;
+}
+
+.revenue-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--amber);
+  opacity: 0.22;
+  line-height: 1;
+  flex-shrink: 0;
+  width: 2.5rem;
+  text-align: center;
+}
+
+.revenue-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.revenue-body h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--bark);
+  margin: 0;
+}
+
+.revenue-body p {
+  font-size: 0.875rem;
+  color: var(--shadow);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.revenue-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--amber);
+  margin-top: 0.6rem;
+}
+
+.revenue-price span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--shadow);
+  font-family: 'Source Serif 4', serif;
+}
+
+.revenue-compare {
+  font-size: 0.75rem;
+  color: var(--shadow);
+  opacity: 0.65;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.econ-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  background: var(--forest);
+  border: 1.5px solid var(--forest);
+  margin: 0 0 2.5rem;
+}
+
+.econ-fact {
+  background: var(--forest);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.econ-num {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.econ-num span {
+  font-size: 0.85rem;
+  color: var(--sage);
+  font-family: 'Source Serif 4', serif;
+  font-weight: 400;
+}
+
+.econ-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sage);
+  margin-top: 0.55rem;
+}
+
+@media (max-width: 760px) {
+  .econ-facts { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .econ-facts { grid-template-columns: 1fr; }
+  .revenue-grid { grid-template-columns: 1fr; }
+}
