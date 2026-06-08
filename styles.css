@@ -1767,7 +1767,9 @@ footer {
 
 .section-photo-bleed img {
   width: 100%;
-  height: auto;
+  height: 520px;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
