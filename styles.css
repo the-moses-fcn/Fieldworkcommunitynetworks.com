@@ -92,6 +92,9 @@ body::before {
   position: relative;
   z-index: 1;
   max-width: 900px;
+  background: rgba(0, 0, 0, 0.42);
+  padding: 3rem 3.5rem;
+  border-radius: 3px;
 }
 
 .logo-wrap {
@@ -1754,53 +1757,23 @@ footer {
   filter: brightness(0.85) contrast(1.05);
 }
 
-/* ─── FCN Equipment Icon Sprites ─── */
-
-.fcn-icon-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 1rem 0 2rem;
-  padding: 1.25rem;
-  background: var(--linen);
-  border: 1px solid rgba(26,61,43,0.1);
-  border-radius: 2px;
-}
+/* ─── FCN Icons ─── */
 
 .fcn-icon {
-  display: inline-block;
-  width: 90px;
-  height: 45px;
-  background-image: url('../assets/Gemini_Generated_Image_jv9y4ljv9y4ljv9y.png');
-  background-size: 360px 196px;
-  background-repeat: no-repeat;
-  border-radius: 2px;
-  opacity: 0.9;
-  transition: opacity 0.2s, transform 0.2s;
-  cursor: default;
+  display: block;
+  width: 64px;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 6px;
 }
 
-.fcn-icon:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+.fcn-icon-sm {
+  display: block;
+  width: 48px;
+  height: auto;
+  margin-bottom: 0.75rem;
+  border-radius: 4px;
 }
-
-.icon-p2p      { background-position:    0  -45px; }
-.icon-compute  { background-position:  -90px -45px; }
-.icon-edge     { background-position: -180px -45px; }
-.icon-mesh-gw  { background-position: -270px -45px; }
-.icon-hydro    { background-position:    0  -83px; }
-.icon-weather  { background-position:  -90px -83px; }
-.icon-drone    { background-position: -180px -83px; }
-.icon-charge   { background-position: -270px -83px; }
-.icon-tablet   { background-position:    0 -122px; }
-.icon-iot      { background-position:  -90px -122px; }
-.icon-mesh-cli { background-position: -180px -122px; }
-.icon-hotspot  { background-position: -270px -122px; }
-.icon-antenna  { background-position:    0 -163px; }
-.icon-fiber    { background-position:  -90px -163px; }
-.icon-climbing { background-position: -180px -163px; }
-.icon-techkit  { background-position: -270px -163px; }
 
 /* ─── FCN Brand Icon Sheet (Vision section) ─── */
 
@@ -1828,21 +1801,5 @@ footer {
 
 @media (max-width: 600px) {
   .hero-photo-wrap { height: 30%; }
-  .fcn-icon { width: 70px; height: 35px; background-size: 280px 153px; }
-  .icon-p2p      { background-position:    0  -35px; }
-  .icon-compute  { background-position:  -70px -35px; }
-  .icon-edge     { background-position: -140px -35px; }
-  .icon-mesh-gw  { background-position: -210px -35px; }
-  .icon-hydro    { background-position:    0  -64px; }
-  .icon-weather  { background-position:  -70px -64px; }
-  .icon-drone    { background-position: -140px -64px; }
-  .icon-charge   { background-position: -210px -64px; }
-  .icon-tablet   { background-position:    0  -94px; }
-  .icon-iot      { background-position:  -70px -94px; }
-  .icon-mesh-cli { background-position: -140px -94px; }
-  .icon-hotspot  { background-position: -210px -94px; }
-  .icon-antenna  { background-position:    0 -126px; }
-  .icon-fiber    { background-position:  -70px -126px; }
-  .icon-climbing { background-position: -140px -126px; }
-  .icon-techkit  { background-position: -210px -126px; }
+  .hero-inner { padding: 2rem 1.75rem; }
 }
